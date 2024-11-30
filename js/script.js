@@ -1,50 +1,29 @@
-class DispositivoEletronico {
-    constructor(nome) {
-        this.nome = nome ;
-        this.ligado = false ;
-    }
-
-    ligar() {
-        if(this.ligado) {
-            console.log(this.nome + ' ' + 'já ligado') ;
-            return ;
-        }
-
-        this.ligado = true ;
-    }
-
-    desligar() {
-        if(!this.ligado) {
-            console.log(this.nome + '' + 'já desligado') ;
-            return ;
-        }
-
-        this.ligado = false ; 
-    }
-} 
-
-class Smartphone extends DispositivoEletronico {
-    constructor(nome, cor, modelo) {
-        super(nome) ;
-        this.cor = cor ;
-        this.modelo = modelo ;
-    }
-
+ function rand(min = 1000, max = 3000) {
+    const num = Math.random() * (max - min) + min ;
+    return Math.floor(num) ;
+ }
+ 
+ function f1() {
+    setTimeout(function(){
+        console.log('F1') ;
+    }, rand()) ;
 }
 
-class Tablet extends DispositivoEletronico{
-    constructor(nome, temWifi) {
-        super(nome) ;
-        this.temWifi = temWifi ;
-    }
-
-    ligar() {
-        console.log('olha, voce alterou o método ligar.') ;
-    }
+function f2() {
+    setTimeout(function(){
+        console.log('F2') ;
+    }, rand()) ;
 }
 
- const s1 = new Smartphone('iphone', 'preto', 's5') ;
- console.log(s1) ;
+function f3() {
+    setTimeout(function(){
+        console.log('F3') ;
+    }, rand()) ;
+}
 
- const t1 = new Tablet('Ipad', true) ;
- console.log(t1) ;
+f1() ;
+f2() ;
+f3() ;
+console.log('ola mundo') ;
+ 
+
